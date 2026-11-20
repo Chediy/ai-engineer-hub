@@ -37,6 +37,24 @@ Add a course with one line in `data.js`:
 c("my-id", "Title", "providerKey", "beginner|intermediate|professional", ["rag", "agents"], "course", "free", "2h", "https://…", "Short description"),
 ```
 
+## Languages (English · Français · Deutsch)
+- The language is chosen from `?lang=fr|de|en` in the URL, otherwise the visitor's saved choice, otherwise the browser language. Visitors can switch live with the **EN / FR / DE** selector in the header.
+- Share a language directly: `https://<your-site>/?lang=fr`
+- Only the visitor's language is downloaded. Anything untranslated falls back to English and never breaks the page.
+
+| What | Where |
+|---|---|
+| English source text (static page) | `index.html` (elements with `data-i18n="key"`) |
+| English source text (app UI) | `assets/i18n/en/ui.js` |
+| Translations | `assets/i18n/<lang>/ui.js`, `data.js`, `content.js`, `quiz.js` |
+| Engine | `assets/js/i18n.js` |
+
+When you add or change content, run the checker. It lists every missing translation, mismatched `{placeholder}` and stale key, and exits non-zero (CI-friendly):
+```bash
+node tools/check-i18n.js
+```
+Course descriptions are keyed by course `id`, and quiz questions by their stable `id` (`q1`…). Never renumber quiz ids, and keep translated options in the **same order** as the English ones. Course titles stay in their original language because they are the names of external resources. Courses also available in French or German are marked via the `localized` map in `data.js` and show a **FR ✓ / DE ✓** badge.
+
 ## Copyright & legal notes
 - The site **only links** to external resources. No third-party videos, thumbnails, logos or course content are hosted or embedded.
 - Providers are shown as colored text monograms, not logos. Brand names are used for identification only.

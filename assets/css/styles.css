@@ -76,6 +76,10 @@ button { font: inherit; color: inherit; }
 .icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; font-size: 1.05rem; }
 .icon-btn:hover { border-color: var(--border-strong); }
 .menu-btn { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.lang-wrap { display: inline-flex; }
+.lang-sel { height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 700; font-size: .85rem; padding: 0 8px; cursor: pointer; }
+.lang-sel:hover { border-color: var(--border-strong); }
 
 @media (max-width: 960px) {
   .menu-btn { display: inline-block; }
@@ -458,6 +462,7 @@ p, li, .term, .mini .m-title, .course-body h3, .explain, .question, .opt span { 
 
 /* Very small phones (e.g. iPhone SE / 320px) */
 @media (max-width: 360px) {
+  .brand-text { display: none; }
   .provider-grid { grid-template-columns: 1fr; }
   .filter-row { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }

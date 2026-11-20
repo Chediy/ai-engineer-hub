@@ -202,6 +202,14 @@ window.AI_DATA = (() => {
     c("nemo-guardrails", "NeMo Guardrails", "nvidia", "professional", ["safety", "llmops"], "repo", "free", "2h", "https://github.com/NVIDIA/NeMo-Guardrails", "Programmable input/output/dialog rails for LLM apps and agents.")
   ];
 
+  // Resources that also exist in French / German (official or maintained translations).
+  const localized = {
+    "elements-ai": ["fr", "de"], "ms-learn-ai": ["fr", "de"], "power-automate": ["fr", "de"],
+    "ms-genai-beginners": ["fr", "de"], "ms-ai-beginners": ["fr", "de"], "ms-ml-beginners": ["fr", "de"], "ms-agents-beginners": ["fr", "de"],
+    "claude-prompt-docs": ["fr", "de"], "claude-code-docs": ["fr", "de"], "promptingguide": ["fr", "de"], "hf-llm-course": ["fr"]
+  };
+  courses.forEach((x) => (x.langs = localized[x.id] || []));
+
   /* ----------------------------- Roadmap ----------------------------- */
   const roadmap = [
     {

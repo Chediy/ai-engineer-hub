@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Engineer Hub</title>
-  <meta name="description" content="A curated, free roadmap to become an AI engineer: LLMs, RAG, agentic AI, agent harnesses, open & local models — with courses by level and provider and an adaptive quiz." />
+  <meta name="description" content="A curated, free roadmap to become an AI engineer: LLMs, RAG, agentic AI, agent harnesses, open & local models — with courses by level and provider and an adaptive quiz. Available in English, French and German." />
   <meta name="theme-color" content="#0b0d17" />
   <meta property="og:title" content="AI Engineer Hub — the software engineer's roadmap to AI" />
-  <meta property="og:description" content="Curated courses by level & provider, core concepts, local model deployment and an adaptive quiz." />
+  <meta property="og:description" content="Curated courses by level & provider, core concepts, local model deployment and an adaptive quiz. EN · FR · DE." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/css/styles.css" />
@@ -18,27 +18,32 @@
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="nav" id="top">
     <div class="nav-inner">
-      <a href="#top" class="brand" aria-label="AI Engineer Hub home">
+      <a href="#top" class="brand" aria-label="AI Engineer Hub">
         <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M9 22l7-13 7 13M11.8 17h8.4" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>AI Engineer <b>Hub</b></span>
+        <span class="brand-text">AI Engineer <b>Hub</b></span>
       </a>
       <nav class="links" id="navLinks" aria-label="Main">
-        <a href="#roadmap">Roadmap</a>
-        <a href="#concepts">Concepts</a>
-        <a href="#courses">Courses</a>
-        <a href="#providers">Providers</a>
-        <a href="#local">Local AI</a>
-        <a href="#harness">Harness</a>
-        <a href="#quiz">Quiz</a>
-        <a href="#updates">Stay updated</a>
+        <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
+        <a href="#concepts" data-i18n="nav.concepts">Concepts</a>
+        <a href="#courses" data-i18n="nav.courses">Courses</a>
+        <a href="#providers" data-i18n="nav.providers">Providers</a>
+        <a href="#local" data-i18n="nav.local">Local AI</a>
+        <a href="#harness" data-i18n="nav.harness">Harness</a>
+        <a href="#quiz" data-i18n="nav.quiz">Quiz</a>
+        <a href="#updates" data-i18n="nav.updates">Stay updated</a>
       </nav>
       <div class="nav-actions">
-        <button class="icon-btn" id="themeBtn" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
-        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+        <label class="lang-wrap"><span class="sr-only" data-i18n="a.lang">Language</span>
+          <select id="langSel" class="lang-sel">
+            <option value="en">EN</option><option value="fr">FR</option><option value="de">DE</option>
+          </select>
+        </label>
+        <button class="icon-btn" id="themeBtn" data-i18n-attr="aria-label=a.theme;title=a.theme" aria-label="Toggle light/dark theme" title="Toggle light/dark theme">◐</button>
+        <button class="icon-btn menu-btn" id="menuBtn" data-i18n-attr="aria-label=a.menu" aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
@@ -48,28 +53,28 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid-bg"></div></div>
       <div class="container hero-inner">
-        <span class="pill">🧭 Updated for the agentic era · Nov 2026</span>
-        <h1>Everything a software engineer needs to become an <span class="grad">AI engineer</span>.</h1>
-        <p class="lead">A curated, mostly-free roadmap: LLMs, RAG, agentic AI, the whole harness around them (tools, automation, ops) and open &amp; local models — with courses sorted by level and provider, hands-on deployment guides and an adaptive quiz that tells you what to learn next.</p>
+        <span class="pill" data-i18n="hero.pill">🧭 Updated for the agentic era · Nov 2026</span>
+        <h1 data-i18n="hero.title">Everything a software engineer needs to become an <span class="grad">AI engineer</span>.</h1>
+        <p class="lead" data-i18n="hero.lead">A curated, mostly-free roadmap: LLMs, RAG, agentic AI, the whole harness around them (tools, automation, ops) and open &amp; local models — with courses sorted by level and provider, hands-on deployment guides and an adaptive quiz that tells you what to learn next.</p>
         <div class="hero-cta">
-          <a href="#roadmap" class="btn primary">Start the roadmap →</a>
-          <a href="#quiz" class="btn ghost">🎯 Test my level</a>
+          <a href="#roadmap" class="btn primary" data-i18n="hero.cta1">Start the roadmap →</a>
+          <a href="#quiz" class="btn ghost" data-i18n="hero.cta2">🎯 Test my level</a>
         </div>
         <div class="stats" id="heroStats"></div>
       </div>
     </section>
 
     <!-- ================= PROGRESS ================= -->
-    <section class="container progress-strip" aria-label="Your progress">
+    <section class="container progress-strip" data-i18n-attr="aria-label=a.progress" aria-label="Your progress">
       <div class="progress-card" id="progressCard"></div>
     </section>
 
     <!-- ================= ROADMAP ================= -->
     <section id="roadmap" class="section container">
       <div class="section-head">
-        <span class="eyebrow">01 · Learning path</span>
-        <h2>The AI engineer roadmap</h2>
-        <p>Three stages from AI-literate developer to production AI engineer. Click a step to see the best resources for it.</p>
+        <span class="eyebrow" data-i18n="s1.eyebrow">01 · Learning path</span>
+        <h2 data-i18n="s1.title">The AI engineer roadmap</h2>
+        <p data-i18n="s1.lead">Three stages from AI-literate developer to production AI engineer. Click a step to see the best resources for it.</p>
       </div>
       <div class="level-tabs" role="tablist" id="roadmapTabs"></div>
       <div id="roadmapBody"></div>
@@ -78,9 +83,9 @@
     <!-- ================= CONCEPTS ================= -->
     <section id="concepts" class="section container">
       <div class="section-head">
-        <span class="eyebrow">02 · Core concepts</span>
-        <h2>The four pillars, explained</h2>
-        <p>Short, original explainers with diagrams so you understand the "why" before diving into courses.</p>
+        <span class="eyebrow" data-i18n="s2.eyebrow">02 · Core concepts</span>
+        <h2 data-i18n="s2.title">The four pillars, explained</h2>
+        <p data-i18n="s2.lead">Short, original explainers with diagrams so you understand the "why" before diving into courses.</p>
       </div>
       <div class="concept-tabs" role="tablist" id="conceptTabs"></div>
       <div class="concept-body" id="conceptBody"></div>
@@ -89,28 +94,28 @@
     <!-- ================= COURSES ================= -->
     <section id="courses" class="section container">
       <div class="section-head">
-        <span class="eyebrow">03 · Course library</span>
-        <h2>Curated courses &amp; resources</h2>
-        <p>Filter by level, topic, provider, format and cost. Mark items as <b>done</b> ✓ or <b>saved</b> ★ — your progress is stored only in your browser.</p>
+        <span class="eyebrow" data-i18n="s3.eyebrow">03 · Course library</span>
+        <h2 data-i18n="s3.title">Curated courses &amp; resources</h2>
+        <p data-i18n="s3.lead">Filter by level, topic, provider, format and cost. Mark items as <b>done</b> ✓ or <b>saved</b> ★ — your progress is stored only in your browser.</p>
       </div>
 
       <div class="filters" id="filters">
         <div class="search-wrap">
           <span aria-hidden="true">🔎</span>
-          <input type="search" id="search" placeholder="Search courses, topics, providers… (press / )" aria-label="Search courses" />
+          <input type="search" id="search" data-i18n-attr="placeholder=f.search;aria-label=f.search" placeholder="Search courses, topics, providers… (press / )" aria-label="Search courses, topics, providers… (press / )" />
         </div>
-        <div class="chip-row" id="levelChips" aria-label="Filter by level"></div>
-        <div class="chip-row scroll" id="topicChips" aria-label="Filter by topic"></div>
+        <div class="chip-row" id="levelChips"></div>
+        <div class="chip-row scroll" id="topicChips"></div>
         <div class="filter-row">
-          <label>Provider <select id="providerSel"></select></label>
-          <label>Format <select id="formatSel"></select></label>
-          <label>Cost <select id="costSel">
-            <option value="">Any</option><option value="free">Free</option><option value="freemium">Free tier / audit</option><option value="paid">Paid</option>
+          <label><span data-i18n="f.provider">Provider</span> <select id="providerSel"></select></label>
+          <label><span data-i18n="f.format">Format</span> <select id="formatSel"></select></label>
+          <label><span data-i18n="f.cost">Cost</span> <select id="costSel">
+            <option value="" data-i18n="f.any">Any</option><option value="free" data-i18n="f.free">Free</option><option value="freemium" data-i18n="f.freemium">Free tier / audit</option><option value="paid" data-i18n="f.paid">Paid</option>
           </select></label>
-          <label>Show <select id="statusSel">
-            <option value="">All</option><option value="saved">★ Saved</option><option value="done">✓ Done</option><option value="todo">Not done</option>
+          <label><span data-i18n="f.show">Show</span> <select id="statusSel">
+            <option value="" data-i18n="f.all">All</option><option value="saved" data-i18n="f.saved">★ Saved</option><option value="done" data-i18n="f.done">✓ Done</option><option value="todo" data-i18n="f.todo">Not done</option>
           </select></label>
-          <button class="btn small ghost" id="resetFilters">Reset</button>
+          <button class="btn small ghost" id="resetFilters" data-i18n="f.reset">Reset</button>
         </div>
       </div>
       <p class="result-count" id="resultCount" aria-live="polite"></p>
@@ -120,9 +125,9 @@
     <!-- ================= PROVIDERS ================= -->
     <section id="providers" class="section container">
       <div class="section-head">
-        <span class="eyebrow">04 · By organization</span>
-        <h2>Courses by company &amp; institution</h2>
-        <p>Official learning material from AI labs, cloud providers, universities and the open-source community.</p>
+        <span class="eyebrow" data-i18n="s4.eyebrow">04 · By organization</span>
+        <h2 data-i18n="s4.title">Courses by company &amp; institution</h2>
+        <p data-i18n="s4.lead">Official learning material from AI labs, cloud providers, universities and the open-source community.</p>
       </div>
       <div class="provider-grid" id="providerGrid"></div>
       <div class="provider-detail" id="providerDetail" hidden></div>
@@ -131,21 +136,21 @@
     <!-- ================= LOCAL ================= -->
     <section id="local" class="section container">
       <div class="section-head">
-        <span class="eyebrow">05 · Open &amp; local models</span>
-        <h2>Run AI on your own hardware</h2>
-        <p>Open-weight models let you keep data private, control costs and customize everything. Here's why it matters, what you need, and how to deploy.</p>
+        <span class="eyebrow" data-i18n="s5.eyebrow">05 · Open &amp; local models</span>
+        <h2 data-i18n="s5.title">Run AI on your own hardware</h2>
+        <p data-i18n="s5.lead">Open-weight models let you keep data private, control costs and customize everything. Here's why it matters, what you need, and how to deploy.</p>
       </div>
 
-      <h3 class="sub">Why local & open models matter for the future</h3>
+      <h3 class="sub" data-i18n="l.why">Why local &amp; open models matter for the future</h3>
       <div class="reason-grid" id="reasonGrid"></div>
 
-      <h3 class="sub">🧮 VRAM / RAM calculator</h3>
+      <h3 class="sub" data-i18n="l.calc">🧮 VRAM / RAM calculator</h3>
       <div class="calc card">
         <div class="calc-inputs">
-          <label>Model size (billions of parameters)
-            <div class="range-row"><input type="range" id="cParams" min="0.5" max="700" step="0.5" value="8" /><input type="number" id="cParamsN" min="0.5" max="2000" step="0.5" value="8" aria-label="Parameters in billions" /></div>
+          <label><span data-i18n="c.params">Model size (billions of parameters)</span>
+            <div class="range-row"><input type="range" id="cParams" min="0.5" max="700" step="0.5" value="8" data-i18n-attr="aria-label=c.params" aria-label="Model size (billions of parameters)" /><input type="number" id="cParamsN" min="0.5" max="2000" step="0.5" value="8" data-i18n-attr="aria-label=c.params" aria-label="Model size (billions of parameters)" /></div>
           </label>
-          <label>Precision / quantization
+          <label><span data-i18n="c.quant">Precision / quantization</span>
             <select id="cQuant">
               <option value="16">FP16 / BF16 (16-bit)</option>
               <option value="8">FP8 / Q8_0 (8-bit)</option>
@@ -155,31 +160,31 @@
               <option value="2.6">Q2_K (~2.6-bit)</option>
             </select>
           </label>
-          <label>Context length (tokens)
+          <label><span data-i18n="c.ctx">Context length (tokens)</span>
             <select id="cCtx">
               <option value="4096">4K</option><option value="8192" selected>8K</option><option value="32768">32K</option><option value="131072">128K</option>
             </select>
           </label>
-          <label>Concurrent users
+          <label><span data-i18n="c.users">Concurrent users</span>
             <select id="cUsers"><option value="1" selected>1</option><option value="4">4</option><option value="16">16</option><option value="64">64</option></select>
           </label>
           <div class="presets" id="cPresets"></div>
         </div>
         <div class="calc-out" id="calcOut" aria-live="polite"></div>
       </div>
-      <p class="fine">Estimates only: weights = params × bits ÷ 8, plus an approximate KV cache (GQA models) and ~10% runtime overhead. Real numbers vary by architecture and runtime.</p>
+      <p class="fine" data-i18n="c.note">Estimates only: weights = params × bits ÷ 8, plus an approximate KV cache (GQA models) and ~10% runtime overhead. Real numbers vary by architecture and runtime.</p>
 
-      <h3 class="sub">Hardware tiers</h3>
+      <h3 class="sub" data-i18n="l.hw">Hardware tiers</h3>
       <div class="table-wrap"><table class="table" id="hwTable"></table></div>
 
-      <h3 class="sub">Popular open-weight model families</h3>
+      <h3 class="sub" data-i18n="l.models">Popular open-weight model families</h3>
       <div class="table-wrap"><table class="table" id="modelTable"></table></div>
-      <p class="fine">Always read each model's license before commercial use. Check the <a href="https://huggingface.co/models" target="_blank" rel="noopener">Hugging Face Hub</a> for the latest versions — this field moves monthly.</p>
+      <p class="fine" data-i18n="l.license">Always read each model's license before commercial use. Check the <a href="https://huggingface.co/models" target="_blank" rel="noopener">Hugging Face Hub</a> for the latest versions — this field moves monthly.</p>
 
-      <h3 class="sub">Tools to run & serve models</h3>
+      <h3 class="sub" data-i18n="l.tools">Tools to run &amp; serve models</h3>
       <div class="tool-grid" id="toolGrid"></div>
 
-      <h3 class="sub">🚀 Deployment quick-starts</h3>
+      <h3 class="sub" data-i18n="l.deploy">🚀 Deployment quick-starts</h3>
       <div class="code-tabs" id="deployTabs" role="tablist"></div>
       <div class="code-panel" id="deployPanel"></div>
     </section>
@@ -187,34 +192,34 @@
     <!-- ================= HARNESS ================= -->
     <section id="harness" class="section container">
       <div class="section-head">
-        <span class="eyebrow">06 · Harness AI engineering</span>
-        <h2>Everything that turns around the model</h2>
-        <p>A new model comes out every few months. What you design as an engineer is the <b>harness</b> around it: model access, data, tools &amp; protocols, agents, automations, interfaces, and the ops layer that keeps it all measurable and safe. Click a layer to explore it.</p>
+        <span class="eyebrow" data-i18n="s6.eyebrow">06 · Harness AI engineering</span>
+        <h2 data-i18n="s6.title">Everything that turns around the model</h2>
+        <p data-i18n="s6.lead">A new model comes out every few months. What you design as an engineer is the <b>harness</b> around it: model access, data, tools &amp; protocols, agents, automations, interfaces, and the ops layer that keeps it all measurable and safe. Click a layer to explore it.</p>
       </div>
       <div class="stack-layout">
-        <div class="stack" id="stackLayers" role="tablist" aria-label="AI engineering stack layers"></div>
+        <div class="stack" id="stackLayers" role="tablist"></div>
         <div class="stack-ops" id="stackOps"></div>
       </div>
       <div class="stack-detail card" id="stackDetail" aria-live="polite"></div>
 
-      <h3 class="sub">🔍 Zoom in: inside an agent harness</h3>
-      <p class="sub-lead">The agent layer has its own harness: the loop, context, sub-agents, skills, permissions and verification that make an agent reliable. That's why the same model can perform very differently in different tools.</p>
+      <h3 class="sub" data-i18n="h.zoom">🔍 Zoom in: inside an agent harness</h3>
+      <p class="sub-lead" data-i18n="h.zoomLead">The agent layer has its own harness: the loop, context, sub-agents, skills, permissions and verification that make an agent reliable. That's why the same model can perform very differently in different tools.</p>
       <div class="harness-layout">
         <div class="card diagram-card" id="harnessDiagram"></div>
         <div class="harness-parts" id="harnessParts"></div>
       </div>
-      <h3 class="sub">Agent harnesses &amp; frameworks worth studying</h3>
+      <h3 class="sub" data-i18n="h.examples">Agent harnesses &amp; frameworks worth studying</h3>
       <div class="tool-grid" id="harnessExamples"></div>
-      <h3 class="sub">Golden rules of harness AI engineering</h3>
+      <h3 class="sub" data-i18n="h.rules">Golden rules of harness AI engineering</h3>
       <ol class="rules" id="harnessRules"></ol>
     </section>
 
     <!-- ================= QUIZ ================= -->
     <section id="quiz" class="section container">
       <div class="section-head">
-        <span class="eyebrow">07 · Smart quiz</span>
-        <h2>Adaptive quiz: find your level</h2>
-        <p>The quiz adapts difficulty to your answers, explains every question, then estimates your level and recommends what to learn next.</p>
+        <span class="eyebrow" data-i18n="s7.eyebrow">07 · Smart quiz</span>
+        <h2 data-i18n="s7.title">Adaptive quiz: find your level</h2>
+        <p data-i18n="s7.lead">The quiz adapts difficulty to your answers, explains every question, then estimates your level and recommends what to learn next.</p>
       </div>
       <div class="quiz card" id="quizBox"></div>
     </section>
@@ -222,9 +227,9 @@
     <!-- ================= TRENDS & UPDATES ================= -->
     <section id="updates" class="section container">
       <div class="section-head">
-        <span class="eyebrow">08 · Stay up to date</span>
-        <h2>What's moving in AI &amp; how to keep up</h2>
-        <p>The field changes weekly. These trends shape the job, and these sources keep you current in 15 minutes a day.</p>
+        <span class="eyebrow" data-i18n="s8.eyebrow">08 · Stay up to date</span>
+        <h2 data-i18n="s8.title">What's moving in AI &amp; how to keep up</h2>
+        <p data-i18n="s8.lead">The field changes weekly. These trends shape the job, and these sources keep you current in 15 minutes a day.</p>
       </div>
       <div class="trend-grid" id="trendGrid"></div>
       <div class="update-grid" id="updateGrid"></div>
@@ -235,19 +240,21 @@
     <div class="container footer-inner">
       <div>
         <div class="brand small"><span>AI Engineer <b>Hub</b></span></div>
-        <p class="fine">An independent, non-commercial learning directory. We only <b>link</b> to external resources; all courses, videos and content belong to their respective owners. Company and product names are trademarks of their owners and are used for identification only — no affiliation or endorsement is implied. No logos, thumbnails or third-party media are hosted on this site; all illustrations are original.</p>
+        <p class="fine" data-i18n="ft.disclaimer">An independent, non-commercial learning directory. We only <b>link</b> to external resources; all courses, videos and content belong to their respective owners. Company and product names are trademarks of their owners and are used for identification only — no affiliation or endorsement is implied. No logos, thumbnails or third-party media are hosted on this site; all illustrations are original.</p>
       </div>
       <div class="footer-links">
-        <a href="#top">Back to top ↑</a>
-        <button class="btn small ghost" id="exportBtn">Export my progress</button>
-        <button class="btn small ghost" id="clearBtn">Reset my progress</button>
+        <a href="#top" data-i18n="ft.top">Back to top ↑</a>
+        <button class="btn small ghost" id="exportBtn" data-i18n="ft.export">Export my progress</button>
+        <button class="btn small ghost" id="clearBtn" data-i18n="ft.reset">Reset my progress</button>
       </div>
     </div>
-    <div class="container fine center">Spotted a broken link or a great resource? Open an issue or PR on the project repository. · Original site content licensed CC BY 4.0.</div>
+    <div class="container fine center" data-i18n="ft.bottom">Spotted a broken link or a great resource? Open an issue or PR on the project repository. · Original site content licensed CC BY 4.0.</div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/i18n/en/ui.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/quiz-data.js"></script>
   <script src="assets/js/content.js"></script>
