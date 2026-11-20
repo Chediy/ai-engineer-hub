@@ -1,0 +1,29 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local AI-assistant settings (may contain machine-specific or private config)
+.claude/
+CLAUDE.local.md
+
+# Dependencies & build output (if tooling is ever added)
+node_modules/
+dist/
+.cache/
+
+# Logs & env files
+*.log
+npm-debug.log*
+.env
+.env.*
+
+# Local deploy tooling state
+.netlify/
+.vercel/
